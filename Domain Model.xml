@@ -1,0 +1,62 @@
+<templateSet group="Domain Model">
+  <template name="ast" value="public String text() {&#10;    return value;&#10;}" description="as text method" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="sv" value="String value = &quot;&quot;;" description="String value field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="iss" value="public boolean isSpecified() {&#10;    return !value.isEmpty();&#10;}&#10;" description="is specified method" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="ise" value="public boolean isEmpty() {&#10;    return value.isEmpty();&#10;}&#10;" description="is empty method" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="lv" value="java.util.List&lt;$CLASS_NAME$&gt; list = new java.util.ArrayList&lt;&gt;();&#10;" description="List values field" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="asl" value="public java.util.List&lt;$CLASS_NAME$&gt; list() {&#10;    return list;&#10;}&#10;" description="as list method" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="ts" value="@Override&#10;public String toString() {&#10;    return value;&#10;}" description="to string method" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="iv" value="Integer value;" description="Integer value field" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="li" value="public java.util.List&lt;$CLASS_NAME$&gt; list() {&#10;    return java.util.Collections.unmodifiableList(list);&#10;}" description="return list method" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="sev" value="java.util.Set&lt;$CLASS_NAME$&gt; set = new java.util.HashSet&lt;&gt;();" description="Set values field" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="se" value="public java.util.Set&lt;$CLASS_NAME$&gt; set() {&#10;    return java.util.Collections.unmodifiableSet(set);&#10;}" description="return set method" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
