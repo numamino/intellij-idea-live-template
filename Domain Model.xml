@@ -1,31 +1,26 @@
 <templateSet group="Domain Model">
-  <template name="ast" value="public String text() {&#10;    return value;&#10;}" description="as text method" toReformat="true" toShortenFQNames="true">
+  <template name="te" value="public String text() {&#10;    return value;&#10;}" description="as text method" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="sv" value="String value = &quot;&quot;;" description="String value field" toReformat="true" toShortenFQNames="true">
+  <template name="sv" value="String $FIELD_NAME$;" description="String value field" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="iss" value="public boolean isSpecified() {&#10;    return !value.isEmpty();&#10;}&#10;" description="is specified method" toReformat="true" toShortenFQNames="true">
+  <template name="isv" value="public boolean isSpecified() {&#10;    return !value.isEmpty();&#10;}" description="is specified value method" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="ise" value="public boolean isEmpty() {&#10;    return value.isEmpty();&#10;}&#10;" description="is empty method" toReformat="true" toShortenFQNames="true">
+  <template name="iev" value="public boolean isEmpty() {&#10;    return value.isEmpty();&#10;}" description="is empty value method" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
   <template name="lv" value="java.util.List&lt;$CLASS_NAME$&gt; list = new java.util.ArrayList&lt;&gt;();&#10;" description="List values field" toReformat="true" toShortenFQNames="true">
-    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="JAVA_DECLARATION" value="true" />
-    </context>
-  </template>
-  <template name="asl" value="public java.util.List&lt;$CLASS_NAME$&gt; list() {&#10;    return list;&#10;}&#10;" description="as list method" toReformat="true" toShortenFQNames="true">
     <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
@@ -41,7 +36,7 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="li" value="public java.util.List&lt;$CLASS_NAME$&gt; list() {&#10;    return java.util.Collections.unmodifiableList(list);&#10;}" description="return list method" toReformat="true" toShortenFQNames="true">
+  <template name="rel" value="public java.util.List&lt;$CLASS_NAME$&gt; list() {&#10;    return java.util.Collections.unmodifiableList(list);&#10;}" description="return list method" toReformat="true" toShortenFQNames="true">
     <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
@@ -53,8 +48,19 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="se" value="public java.util.Set&lt;$CLASS_NAME$&gt; set() {&#10;    return java.util.Collections.unmodifiableSet(set);&#10;}" description="return set method" toReformat="false" toShortenFQNames="true">
+  <template name="res" value="public java.util.Set&lt;$CLASS_NAME$&gt; set() {&#10;    return java.util.Collections.unmodifiableSet(set);&#10;}" description="return set method" toReformat="false" toShortenFQNames="true">
     <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="ofe" value="public static $CLASS_NAME$ ofEmpty() {&#10;    return new $CLASS_NAME$();&#10;}" description="default factory method" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="iel" value="public boolean isEmpty() {&#10;    return list.isEmpty();&#10;}" description="is empty list method" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
