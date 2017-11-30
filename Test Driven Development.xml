@@ -1,8 +1,14 @@
 <templateSet group="Test Driven Development">
-  <template name="test" value="@Test&#10;public void $METHOD_NAME$() throws Exception {&#10;    com.sun.tools.internal.ws.wsdl.parser.Util.fail(&quot;not implemented&quot;);&#10;}" description="test method template" toReformat="false" toShortenFQNames="true">
+  <template name="test" value="@Test&#10;public void $METHOD_NAME$() throws Exception {&#10;    org.junit.Assert.fail(&quot;not implemented&quot;);&#10;}" description="test method template" toReformat="false" toShortenFQNames="true">
     <variable name="METHOD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="asrt" value="org.assertj.core.api.Assertions.assertThat(&quot;actual&quot;).isEqualTo(&quot;expected&quot;);" description="basic assertions" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+      <option name="JAVA_STATEMENT" value="true" />
     </context>
   </template>
 </templateSet>
