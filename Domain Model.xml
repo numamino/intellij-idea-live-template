@@ -1,23 +1,26 @@
 <templateSet group="Domain Model">
-  <template name="sv" value="String $FIELD_NAME$ = &quot;&quot;;&#10;&#10;public $THIS_CLASS$(String value) {&#10;    this.$FIELD_NAME$ = value;&#10;}" description="String value field" toReformat="true" toShortenFQNames="true">
+  <template name="sv" value="String $FIELD_NAME$;&#10;&#10;public $THIS_CLASS$() {&#10;    this(&quot;&quot;);&#10;}&#10;&#10;public $THIS_CLASS$(String $FIELD_NAME$) {&#10;    this.$FIELD_NAME$ = $FIELD_NAME$;&#10;}&#10;&#10;@Override&#10;public String toString() {&#10;    return $FIELD_NAME$;&#10;}" description="String value field" toReformat="true" toShortenFQNames="true">
     <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="THIS_CLASS" expression="className()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="vis" value="public boolean isSpecified() {&#10;    return !value.isEmpty();&#10;}" description="is specified value method" toReformat="true" toShortenFQNames="true">
+  <template name="vis" value="public boolean isSpecified() {&#10;    return !$FIELD_NAME$.isEmpty();&#10;}" description="is specified value method" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="vie" value="public boolean isEmpty() {&#10;    return value.isEmpty();&#10;}" description="is empty value method" toReformat="true" toShortenFQNames="true">
+  <template name="vie" value="public boolean isEmpty() {&#10;    return $FIELD_NAME$.isEmpty();&#10;}" description="is empty value method" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="lv" value="java.util.List&lt;$CLASS_NAME$&gt; list = new java.util.ArrayList&lt;&gt;();&#10;&#10;public $THIS_CLASS$(java.util.List&lt;$CLASS_NAME$&gt; list) {&#10;    this.list = list;&#10;}" description="List values class" toReformat="true" toShortenFQNames="true">
+  <template name="lv" value="java.util.List&lt;$CLASS_NAME$&gt; $FIELD_NAME$;&#10;&#10;public $THIS_CLASS$() {&#10;    this(new java.util.ArrayList&lt;&gt;());&#10;}&#10;&#10;public $THIS_CLASS$(java.util.List&lt;$CLASS_NAME$&gt; $FIELD_NAME$) {&#10;    this.$FIELD_NAME$ = $FIELD_NAME$;&#10;}&#10;" description="List values class" toReformat="true" toShortenFQNames="true">
     <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="THIS_CLASS" expression="className()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
@@ -58,7 +61,8 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
-  <template name="lie" value="public boolean isEmpty() {&#10;    return list.isEmpty();&#10;}" description="is empty list method" toReformat="true" toShortenFQNames="true">
+  <template name="lie" value="public boolean isEmpty() {&#10;    return $FIELD_NAME$.isEmpty();&#10;}" description="is empty list method" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_DECLARATION" value="true" />
     </context>
